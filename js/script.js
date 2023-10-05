@@ -18,6 +18,7 @@ function getUserName() {
         return
     }
 
+    document.getElementById("userNameDOM").classList.remove("is-invalid")
     return userName
 
 }
@@ -48,6 +49,7 @@ function getTripLength() {
         return
     }
 
+    document.getElementById("tripLengthDOM").classList.remove("is-invalid")
     return tripLength
 
 }
@@ -92,7 +94,7 @@ document.getElementById("priceBtnDOM").addEventListener("click", function calcTr
         passengerOffer = 'Senior'
     }
 
-    if (!isNaN(tripPrice)) {
+    if (!isNaN(tripPrice) && userName !== undefined) {
         document.getElementById("passengerNameDOM").innerHTML = userName
         document.getElementById("passengerOfferDOM").innerHTML = passengerOffer + ' ticket'
         document.getElementById("CoachNumberDOM").innerHTML = Math.floor(Math.random() * (12 - 1 + 1) + 1)
