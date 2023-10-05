@@ -18,6 +18,10 @@ function getTripLength() {
         return alert('Input is not a number')
     }
 
+    else if (Math.sign((parseInt(tripLength))) !== 1 ) {
+        return alert('Input is an invalid number')
+    }
+
     return tripLength
 
 }
