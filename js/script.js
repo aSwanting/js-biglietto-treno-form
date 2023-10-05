@@ -88,3 +88,13 @@ document.getElementById("priceBtnDOM").addEventListener("click", function calcTr
     }
 
 })
+
+// ### Reset Form
+// - go into DOM and reset values
+document.getElementById("resetBtnDOM").addEventListener("click", function resetValues() {
+
+    console.log(document.getElementById("userNameDOM").value = '')
+    console.log(document.getElementById("tripLengthDOM").value = '')
+    console.log(document.getElementById("ageBracketDOM").value = 'adult')
+
+})
