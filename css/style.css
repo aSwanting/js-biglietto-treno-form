@@ -18,6 +18,14 @@
     background-color: rgba(255, 255, 255, 0.8);
 }
 
+.input-boxes {
+    margin-bottom: 48px;
+}
+
+.invalid-feedback {
+    margin-bottom: -25px;
+}
+
 ::-webkit-scrollbar {
     background-color: transparent;
 }

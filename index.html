@@ -22,34 +22,39 @@
 
                     <h1 class="mb-4">Journey Planner</h1>
 
-                    <div class="row g-4">
+                    <div class="input-boxes row g-4">
 
                         <div class="col-md-4">
-                            <label class="mb-1" for="userNameDOM">Enter Name</label>
+                            <label class="form-label" for="userNameDOM">Enter Name</label>
                             <input class="form-control col" name="userName" id="userNameDOM" type="text"
                                 placeholder="John Doe">
+                            <div id="userNameDOMfeedback" class="invalid-feedback">Invalid input</div>
                         </div>
 
                         <div class="col-md-4">
-                            <label class="mb-1" for="tripLengthDOM">Enter Kilometers</label>
+                            <label class="form-label" for="tripLengthDOM">Enter Kilometers</label>
                             <input class="form-control col" name="tripLength" id="tripLengthDOM" type="text"
                                 placeholder="Trip Length in km">
+                                <div id="tripLengthDOMfeedback" class="invalid-feedback">Invalid input</div>
+
                         </div>
 
                         <div class="col-md-4">
-                            <label class="mb-1" for="ageBracketDOM">Select Age</label>
+                            <label class="form-label" for="ageBracketDOM">Select Age</label>
                             <select class="form-select col" name="ageBracket" id="ageBracketDOM">
                                 <option value="adult">Adult (18 - 65)</option>
                                 <option value="minor">Minor (under 18)</option>
                                 <option value="senior">Senior (over 65)</option>
                             </select>
                         </div>
+                    </div>
+
+                    <div class="row">
 
                         <div class="col-md-7 d-flex gap-4 gap-md-3">
                             <button class="btn btn-outline-light flex-grow-1" id="priceBtnDOM">Get Price</button>
                             <button class="btn btn-outline-light flex-grow-1" id="resetBtnDOM">Cancel</button>
                         </div>
-
 
                     </div>
 

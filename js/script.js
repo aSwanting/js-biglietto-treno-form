@@ -7,15 +7,15 @@ function getUserName() {
     const userName = document.getElementById("userNameDOM").value
 
     if (userName === "") {
-        return alert('No name inserted')
-    }
-
-    else if (userName === null) {
+        document.getElementById("userNameDOM").classList.add("is-invalid")
+        document.getElementById("userNameDOMfeedback").innerHTML = ("No name inserted")
         return
     }
 
     else if (!isNaN(parseInt(userName))) {
-        return alert('Name cannot be numbers')
+        document.getElementById("userNameDOM").classList.add("is-invalid")
+        document.getElementById("userNameDOMfeedback").innerHTML = ("Name cannot be numbers")
+        return
     }
 
     return userName
@@ -31,19 +31,21 @@ function getTripLength() {
     const tripLength = document.getElementById("tripLengthDOM").value
 
     if (tripLength === "") {
-        return alert('No distance inserted')
-    }
-
-    else if (tripLength === null) {
+        document.getElementById("tripLengthDOM").classList.add("is-invalid")
+        document.getElementById("tripLengthDOMfeedback").innerHTML = ("No distance inserted")
         return
     }
 
     else if (isNaN(parseInt(tripLength))) {
-        return alert('Input is not a number')
+        document.getElementById("tripLengthDOM").classList.add("is-invalid")
+        document.getElementById("tripLengthDOMfeedback").innerHTML = ("Not a number")
+        return
     }
 
     else if (Math.sign((parseInt(tripLength))) !== 1) {
-        return alert('Input is an invalid number')
+        document.getElementById("tripLengthDOM").classList.add("is-invalid")
+        document.getElementById("tripLengthDOMfeedback").innerHTML = ("Invalid number")
+        return
     }
 
     return tripLength
@@ -104,8 +106,18 @@ document.getElementById("priceBtnDOM").addEventListener("click", function calcTr
 // - go into DOM and reset values
 document.getElementById("resetBtnDOM").addEventListener("click", function resetValues() {
 
-    console.log(document.getElementById("userNameDOM").value = '')
-    console.log(document.getElementById("tripLengthDOM").value = '')
-    console.log(document.getElementById("ageBracketDOM").value = 'adult')
+    // Remove invalid style and feedback
+    document.getElementById("userNameDOM").classList.remove("is-invalid")
+    document.getElementById("tripLengthDOM").classList.remove("is-invalid")
+
+    // Reset DOM values
+    document.getElementById("userNameDOM").value = ''
+    document.getElementById("tripLengthDOM").value = ''
+    document.getElementById("ageBracketDOM").value = 'adult'
+    document.getElementById("passengerNameDOM").innerHTML = '-'
+    document.getElementById("passengerOfferDOM").innerHTML = '-'
+    document.getElementById("CoachNumberDOM").innerHTML = '-'
+    document.getElementById("BookingNumberDOM").innerHTML = '-'
+    document.getElementById("TicketPriceDOM").innerHTML = '-'
 
 })
