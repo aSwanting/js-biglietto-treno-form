@@ -1,0 +1,28 @@
+.app {
+    background: url(../img/evgeni-evgeniev-LPKk3wtkC-g-unsplash.jpg);
+    background-size: cover;
+    
+}
+
+
+/* .app-body {
+    background-color: green;
+} */
+
+
+.app-form {
+    background-color: rgba(0, 10, 20, 0.8);
+}
+
+.app-result {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+::-webkit-scrollbar {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 10, 20, 0.8);
+    border-radius: 50px;
+}

@@ -12,59 +12,88 @@
 
 <body>
 
-    <div class="container-sm border rounded my-5 p-4">
+    <main class="app vh-100 overflow-auto p-5">
 
-        <div class="d-flex flex-wrap justify-content-center gap-5 p-4">
+        <div class="app-body shadow rounded-5 overflow-hidden">
 
-            <input name="userName" id="userNameDOM" type="text" placeholder="Name Surname">
+            <div class="container-fluid app-form p-5 text-white">
 
-            <input name="tripLength" id="tripLengthDOM" type="text" placeholder="Trip Length in km">
+                <h1 class="mb-5">Journey Planner</h1>
 
-            <select name="ageBracket" id="ageBracketDOM">
-                <option value="adult">Adult (18 - 65)</option>
-                <option value="minor">Minor (under 18)</option>
-                <option value="senior">Senior (over 65)</option>
-            </select>
+                <div class="row">
+
+                    <div class="mb-5 col-md-4">
+                        <label class="mb-1" for="userNameDOM">Enter Name</label>
+                        <input class="form-control col" name="userName" id="userNameDOM" type="text"
+                            placeholder="John Doe">
+                    </div>
+
+                    <div class="mb-5 col-md-4">
+                        <label class="mb-1" for="tripLengthDOM">Enter Kilometers</label>
+                        <input class="form-control col" name="tripLength" id="tripLengthDOM" type="text"
+                            placeholder="Trip Length in km">
+                    </div>
+
+                    <div class="mb-5 col-md-4">
+                        <label class="mb-1" for="ageBracketDOM">Select Age</label>
+                        <select class="form-select col" name="ageBracket" id="ageBracketDOM">
+                            <option value="adult">Adult (18 - 65)</option>
+                            <option value="minor">Minor (under 18)</option>
+                            <option value="senior">Senior (over 65)</option>
+                        </select>
+                    </div>
+
+                    <div class="py-3 d-flex gap-4 justify-center">
+                        <button class="btn btn-outline-light px-5" id="priceBtnDOM">Get Price</button>
+                        <button class="btn btn-outline-light px-5" id="resetBtnDOM">Cancel</button>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+            <div class="container-fluid app-result p-5 text-black">
+
+                <h1 class="mb-5">Trip Details</h1>
+
+                <div class="row">
+
+                    <div class="col-md text-nowrap">
+                        <p class="fw-bold">Passenger Name</p>
+                        <p id="passengerNameDOM">-</p>
+                    </div>
+
+                    <div class="col-md">
+                        <p class="fw-bold">Offer</p>
+                        <p id="passengerOfferDOM">-</p>
+                    </div>
+
+                    <div class="col-md">
+                        <p class="fw-bold">Coach</p>
+                        <p id="CoachNumberDOM">-</p>
+                    </div>
+
+                    <div class="col-md">
+                        <p class="fw-bold">Booking #</p>
+                        <p id="BookingNumberDOM">-</p>
+                    </div>
+
+                    <div class="col-md">
+                        <p class="fw-bold">Ticket Price</p>
+                        <p id="TicketPriceDOM">-</p>
+                    </div>
+
+                </div>
+
+
+
+            </div>
 
         </div>
 
-        <div class="d-flex flex-wrap justify-content-center gap-5 p-4">
-
-            <button id="priceBtnDOM">Get Price</button>
-            <button id="resetBtnDOM">Cancel</button>
-
-        </div>
-
-    </div>
-
-    <div class="container-sm border rounded my-5 p-4 d-flex">
-
-        <div class="p-5 border-top border-bottom flex-grow-1">
-            <p class="fw-bold">Passenger Name</p>
-            <p id="passengerNameDOM">-</p>
-        </div>
-
-        <div class="p-5 border-top border-bottom flex-grow-1">
-            <p class="fw-bold">Offer</p>
-            <p id="passengerOfferDOM">-</p>
-        </div>
-
-        <div class="p-5 border-top border-bottom flex-grow-1">
-            <p class="fw-bold">Coach</p>
-            <p id="CoachNumberDOM">-</p>
-        </div>
-
-        <div class="p-5 border-top border-bottom flex-grow-1">
-            <p class="fw-bold">Booking #</p>
-            <p id="BookingNumberDOM">-</p>
-        </div>
-
-        <div class="p-5 border-top border-bottom flex-grow-1">
-            <p class="fw-bold">Ticket Price</p>
-            <p id="TicketPriceDOM">-</p>
-        </div>
-
-    </div>
+    </main>
 
     <script src="./js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
