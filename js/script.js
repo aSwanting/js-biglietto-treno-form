@@ -14,6 +14,10 @@ function getUserName() {
         return
     }
 
+    else if (!isNaN(parseInt(userName))) {
+        return alert('Name cannot be numbers')
+    }
+
     return userName
 
 }
