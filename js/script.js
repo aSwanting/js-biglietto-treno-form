@@ -1,3 +1,23 @@
+// ### Get user name and surname
+// - Ask user to input name and surname in an html input element
+// - Store in variable 'userName'
+
+function getUserName() {
+
+    const userName = document.getElementById("userNameDOM").value
+
+    if (userName === "") {
+        return alert('No name inserted')
+    }
+
+    else if (userName === null) {
+        return
+    }
+
+    return userName
+
+}
+
 // ### Get user trip length in km
 // - Ask user to input trip length in an html input element
 // - Store in variable 'tripLength'
@@ -7,7 +27,7 @@ function getTripLength() {
     const tripLength = document.getElementById("tripLengthDOM").value
 
     if (tripLength === "") {
-        return alert('No input from user')
+        return alert('No distance inserted')
     }
 
     else if (tripLength === null) {
@@ -18,7 +38,7 @@ function getTripLength() {
         return alert('Input is not a number')
     }
 
-    else if (Math.sign((parseInt(tripLength))) !== 1 ) {
+    else if (Math.sign((parseInt(tripLength))) !== 1) {
         return alert('Input is an invalid number')
     }
 
@@ -52,6 +72,7 @@ function getAgeBracket() {
 
 document.getElementById("priceBtnDOM").addEventListener("click", function calcTripPrice() {
 
+    const userName = getUserName()
     const tripLength = parseFloat(getTripLength())
     const ticketRate = 0.21
     const discountRate = getAgeBracket()
@@ -59,7 +80,7 @@ document.getElementById("priceBtnDOM").addEventListener("click", function calcTr
     const tripPrice = ((tripLength * ticketRate) * discountRate).toFixed(2)
 
     if (!isNaN(tripPrice)) {
-        console.log('Trip price is ' + tripPrice + ' euros')
+        console.log(userName + ' will pay ' + tripPrice + ' euros')
     }
 
 })
