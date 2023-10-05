@@ -80,11 +80,22 @@ document.getElementById("priceBtnDOM").addEventListener("click", function calcTr
     const tripLength = parseFloat(getTripLength())
     const ticketRate = 0.21
     const discountRate = getAgeBracket()
+    let passengerOffer = 'Standard'
 
     const tripPrice = ((tripLength * ticketRate) * discountRate).toFixed(2)
 
+    if (discountRate === 0.8) {
+        passengerOffer = 'Youth'
+    } else if (discountRate === 0.6) {
+        passengerOffer = 'Senior'
+    }
+
     if (!isNaN(tripPrice)) {
-        console.log(userName + ' will pay ' + tripPrice + ' euros')
+        document.getElementById("passengerNameDOM").innerHTML = userName
+        document.getElementById("passengerOfferDOM").innerHTML = passengerOffer + ' ticket'
+        document.getElementById("CoachNumberDOM").innerHTML = Math.floor(Math.random() * (12 - 1 + 1) + 1)
+        document.getElementById("BookingNumberDOM").innerHTML = Math.floor(Math.random() * (99999 - 10000 + 1) + 10000)
+        document.getElementById("TicketPriceDOM").innerHTML = tripPrice + '&euro;'
     }
 
 })
