@@ -19,6 +19,7 @@
 
 .input-boxes {
     margin-bottom: 48px;
+    row-gap: 36px;
 }
 
 .invalid-feedback {
