@@ -1,9 +1,8 @@
+
 .app {
     background: url(../img/evgeni-evgeniev-LPKk3wtkC-g-unsplash.jpg);
     background-size: cover;
-
 }
-
 
 .app-body.invalid {
     animation: invalid-shake 200ms;

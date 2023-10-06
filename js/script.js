@@ -116,18 +116,18 @@ document.getElementById("priceBtnDOM").addEventListener("click", function calcTr
 // - go into DOM and reset values
 document.getElementById("resetBtnDOM").addEventListener("click", function resetValues() {
 
-    // Remove invalid style and feedback
-    document.getElementById("userNameDOM").classList.remove("is-invalid")
-    document.getElementById("tripLengthDOM").classList.remove("is-invalid")
+    // Reset value and style for DOM form-control elements
+    document.querySelectorAll(".form-control").forEach(function (Element) {
+        Element.classList.remove("is-invalid")
+        Element.value = ''
+    })
 
-    // Reset DOM values
-    document.getElementById("userNameDOM").value = ''
-    document.getElementById("tripLengthDOM").value = ''
+    // Reset default select option for DOM form-select
     document.getElementById("ageBracketDOM").value = 'adult'
-    document.getElementById("passengerNameDOM").innerHTML = '-'
-    document.getElementById("passengerOfferDOM").innerHTML = '-'
-    document.getElementById("CoachNumberDOM").innerHTML = '-'
-    document.getElementById("BookingNumberDOM").innerHTML = '-'
-    document.getElementById("TicketPriceDOM").innerHTML = '-'
+
+    // Reset DOM Passenger Details
+    document.querySelectorAll(".dash-reset").forEach(function (Element) {
+        Element.innerHTML = '-'
+    })
 
 })
