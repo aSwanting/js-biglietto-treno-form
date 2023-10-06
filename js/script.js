@@ -31,6 +31,7 @@ function getTripLength() {
 
     const tripLength = document.getElementById("tripLengthDOM").value
 
+
     if (tripLength === "") {
         document.getElementById("tripLengthDOM").classList.add("is-invalid")
         document.getElementById("tripLengthDOMfeedback").innerHTML = ("No distance inserted")
@@ -80,6 +81,10 @@ function getAgeBracket() {
 
 document.getElementById("priceBtnDOM").addEventListener("click", function calcTripPrice() {
 
+    // Remove animation and reflow
+    document.getElementById("appBodyDOM").classList.remove("invalid")
+    void document.getElementById("appBodyDOM").offsetWidth
+
     const userName = getUserName()
     const tripLength = parseFloat(getTripLength())
     const ticketRate = 0.21
@@ -94,12 +99,15 @@ document.getElementById("priceBtnDOM").addEventListener("click", function calcTr
         passengerOffer = 'Senior'
     }
 
-    if (!isNaN(tripPrice) && userName !== undefined) {
+    if (userName && tripLength) {
+        console.log(userName, tripLength)
         document.getElementById("passengerNameDOM").innerHTML = userName
         document.getElementById("passengerOfferDOM").innerHTML = passengerOffer + ' ticket'
         document.getElementById("CoachNumberDOM").innerHTML = Math.floor(Math.random() * (12 - 1 + 1) + 1)
         document.getElementById("BookingNumberDOM").innerHTML = Math.floor(Math.random() * (99999 - 10000 + 1) + 10000)
         document.getElementById("TicketPriceDOM").innerHTML = tripPrice + '&euro;'
+    } else {
+        document.getElementById("appBodyDOM").classList.add("invalid")
     }
 
 })

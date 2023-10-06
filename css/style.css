@@ -1,13 +1,13 @@
 .app {
     background: url(../img/evgeni-evgeniev-LPKk3wtkC-g-unsplash.jpg);
     background-size: cover;
-    
+
 }
 
 
-/* .app-body {
-    background-color: green;
-} */
+.app-body.invalid {
+    animation: invalid-shake 200ms;
+}
 
 
 .app-form {
@@ -24,6 +24,28 @@
 
 .invalid-feedback {
     margin-bottom: -25px;
+}
+
+@keyframes invalid-shake {
+    0% {
+        transform: translateX(0)
+    }
+
+    25% {
+        transform: translateX(5px)
+    }
+
+    50% {
+        transform: translateX(-5px)
+    }
+
+    75% {
+        transform: translateX(5px)
+    }
+
+    100% {
+        transform: translateX(0)
+    }
 }
 
 ::-webkit-scrollbar {
